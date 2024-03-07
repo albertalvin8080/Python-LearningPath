@@ -1,0 +1,12 @@
+{
+  "nome": "Carlos moura",
+  "CPF": "000.000.000-11",
+  "endereco": {
+    "Estado": "Acre",
+    "Cidade": "Rondonia",
+    "Bairro": "bairro generico",
+    "Rua": "Rua nao sei das quantas"
+  },
+  "casado": false,
+  "lema": null
+}
