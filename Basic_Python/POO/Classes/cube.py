@@ -2,11 +2,13 @@ class Cube:
     def __init__(self, side=1) -> None:
         self.side = side
 
+    # This decorator is used to define a method that operates on the class itself rather than on instances of the class.
     @classmethod
     def create_cube_by_area(cls, area):
         side = area ** 0.5
         return cls(side)
     
+    # This decorator is used to define a method that does not access the instance or the class itself. It behaves like a regular function, except that it is defined inside a class.
     @staticmethod
     def falar_oi():
         print('oi')
