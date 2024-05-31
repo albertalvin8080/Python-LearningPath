@@ -1,4 +1,7 @@
 import re
+import os
+
+# os.system('cls')
 
 texto = '''
 Estamos aqui reunidos para decifrar
@@ -15,7 +18,7 @@ entusi.asta@gmail.gov
 testanto..a@hotmail.dev
 '''
 
-pattern = re.compile('([\w.]+)@(\w+)(\.\w+)')
+pattern = re.compile(r'([\w.]+)@(\w+)(\.\w+)')
 
 matches = pattern.finditer(texto)
 
@@ -23,5 +26,6 @@ for match in matches:
     print(match.group(0))
 
 # subbed_texto = pattern.sub(r'*substituindo*',texto)
-subbed_texto = pattern.sub(r'\3\2@\1',texto)
+# subbed_texto = pattern.sub(r'\3\2@\1',texto)
+subbed_texto = pattern.sub(r'\3@\2\1',texto)
 print(subbed_texto)

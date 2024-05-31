@@ -1,5 +1,5 @@
 import formatacao_teste as formatacao
-# from . import formatacao_teste as formatacao -> so funciona se o __main__ estiver fora dessa pasta (pacote)
+# from . import formatacao_teste as formatacao -> so funciona se o __main__ estiver fora dessa pasta (madulo)
 # print(dir(formatacao))
 ### depende de onde eu estou rodando o script __main__
 ### se eu importar pelo nome do pacote, esse modulo nao funciona, mas modulos_teste funciona, porque estah fora
