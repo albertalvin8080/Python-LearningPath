@@ -1,4 +1,5 @@
 import re
+import pymsgbox
 import pyautogui
 import pydirectinput
 from time import sleep
@@ -70,7 +71,7 @@ if __name__ == "__main__":
     confidence = 0.95
 
     # raw_operation = input("Give me an operation (Ex: 12*15):\n> ")
-    pyautogui.
+    raw_operation = pymsgbox.prompt("Give me an operation (Ex: 12*15)", "CalculateV2")
     list_operation = validate_operation(raw_operation)
     list_operation.append("=")
     # print(list_operation)
