@@ -16,7 +16,7 @@ print(np.log(a))
 #  0 -> zero
 #  1 -> positive
 print(np.sign(a)) 
-# efetuates `1/x` where `x` is the current item. It needs to be a float, otherwise it will truncate the results.
+# efetuates `1/x` where `x` is the current item. It needs to be a float, otherwise the result will be truncated.
 print(np.reciprocal(a)) 
 
 print("----------------------------------------------------------------------")
