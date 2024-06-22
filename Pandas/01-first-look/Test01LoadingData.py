@@ -27,7 +27,7 @@ print(df[["Name", "Attack", "#"]][0:5])
 
 print("=" * 100)
 
-# Manipulating Rows
+# Manipulating Rows and Columns
 print(df.iloc[160:170])  # 10 rowns
 print("-" * 100)
 print(df.iloc[2, 1])  # Specific item (R, C)
