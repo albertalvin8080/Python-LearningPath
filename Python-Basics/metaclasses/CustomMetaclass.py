@@ -5,7 +5,7 @@ os.system("cls")
 
 # NOTE: namespace == attributes and methods
 class CustomMeta(type):
-    def __new__(self, class_name, bases, namespace):
+    def __new__(cls, class_name, bases, namespace):
         print(namespace)
 
         # Changing all attributes and methods to uppercase (just for test)
@@ -16,8 +16,8 @@ class CustomMeta(type):
             else:
                 temp[key.upper()] = value
 
-        return type(class_name, bases, temp)  # don't forget to return the class_object
-        # return super.__new__(class_name, bases, namespace)
+        # return type(class_name, bases, temp)  # don't forget to return the class_object
+        return super().__new__(cls, class_name, bases, temp)
 
 
 class MyClass(metaclass=CustomMeta):
