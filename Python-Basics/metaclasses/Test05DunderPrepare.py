@@ -23,10 +23,10 @@ def fun(self, x):
     # globals() -> Return the dictionary containing the current scope's global variables.
     # exec() -> Executes the given source in the context of globals and locals.
     #           It is being used to execute the class body within a specific namespace.
-    #           Passing globals() ensures that the executed code has access to the same 
+    #           Passing globals() ensures that the executed code has access to the same
     #           global scope as the rest of your program, which can be important for maintaining consistency.
     # exec(body, globals(), namespace)
-    exec(body, {}, namespace) # You may omit globals() in this case.
+    exec(body, {}, namespace)  # You may omit globals() in this case.
 
     print(globals())
     print(namespace)

@@ -10,7 +10,7 @@ def abstractmethod(f):
     return f
 
 
-# NOTE: When whe override methods, the attrubute __abstract__ is removed.
+# NOTE: When whe override a method, the attrubute __abstract__ is removed.
 # That's how we know if we're dealing with a concrete or an abstract method.
 def abstrac_tmethods(cls):
     print("Inside isabstract()", cls)
@@ -75,9 +75,9 @@ class MyConcreteClass(MyAbstractClass):
 
 if __name__ == "__main__":
     # MetaWrapper() # OK. Why? Because there're no abstract methods inside this wrapper.
-    # MyAbstractClass() # ERROR: uninplemented abstract methods.
+    # MyAbstractClass() # ERROR: Uninplemented abstract methods.
 
-    my_obj = MyConcreteClass()  # OK: all abstract methods were overriden.
+    my_obj = MyConcreteClass()  # OK: All abstract methods were overriden.
     print(my_obj)
     my_obj.fun()
     my_obj.hello()

@@ -7,17 +7,17 @@ class MyMeta(type):
     @classmethod
     def __prepare__(metacls, name: str, bases: tuple[type, ...]):
         print("Inside MyMeta.__prepare__()", metacls)
-        return {"age":35} # Testing
-    
+        return {"age": 35}  # Testing
+
     def __call__(self, *args, **kwds):
+        # pass
         print("Inside MyMeta.__call__()", self)
         print(self.__mro__)
         print(self.mro())
-        # pass
 
     def __new__(cls, class_name, bases, namespace):
         print("Inside MyMeta.__new__()", cls)
-        print(namespace) # Should contain "age":35
+        print(namespace)  # Should contain "age":35
         return super().__new__(cls, class_name, bases, namespace)
 
 
