@@ -85,6 +85,7 @@ JPA_Hibernate/first-test/mysql-data/
 
 **/.venv
 **/__pycache__
+**/.pytest_cache
 
 -- TESTING --
 **/*.madmoiselle
