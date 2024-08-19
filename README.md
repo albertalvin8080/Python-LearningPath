@@ -1,2 +1,2 @@
 # Description
-Simple repository for lerning more about Python.
+Simple repository for learning more about Python.
