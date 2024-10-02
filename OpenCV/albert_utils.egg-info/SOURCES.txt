@@ -1,0 +1,7 @@
+setup.py
+albert_utils/__init__.py
+albert_utils/mouse_metadata.py
+albert_utils.egg-info/PKG-INFO
+albert_utils.egg-info/SOURCES.txt
+albert_utils.egg-info/dependency_links.txt
+albert_utils.egg-info/top_level.txt
