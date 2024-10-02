@@ -96,3 +96,5 @@ JPA_Hibernate/first-test/mysql-data/
 
 #*/mvnw
 #*/mvnw.cmd
+
+**/*.egg-info 
