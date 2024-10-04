@@ -6,6 +6,6 @@ setup(
     name="albert_utils",
     version="0.1",
     description="Utility functions for OpenCV",
-    author="Albert",
+    author="Albert Alvin",
     packages=find_packages(),
 )

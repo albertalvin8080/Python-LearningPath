@@ -7,6 +7,7 @@ GRAY = 4
 
 def display_metadata(event, x, y, flags, param):
     if event == cv2.EVENT_MOUSEMOVE:
+        # print(flags)
         img_copy = param["img"].copy()
 
         colorspace = param["colorspace"]
