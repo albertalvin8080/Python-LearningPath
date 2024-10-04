@@ -2,20 +2,20 @@ import cv2
 from PIL import Image
 from albert_utils import color_converter
 
-target_color = (0, 255, 255)  # color in BGR
+target_color = (0, 255, 0)  # color in BGR
 lower_limit, upper_limit = color_converter.bgr2hsv(target_color)
 morph_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
 blur_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (21, 21))
 print(blur_kernel.shape)
 sigma = 0  # standard deviation for the gaussian kernel. 0 makes opencv calculate it automatically.
 
-webcam = cv2.VideoCapture(0)  # 0 for Webcam
+webcam = cv2.VideoCapture(0)  # 0 for Webcam in this case.
 fps = webcam.get(cv2.CAP_PROP_FPS)
 if fps > 0:
     # miliseconds = 1000 / FPS
     wait_time = int(1000 / fps)
 else:
-    wait_time = 1  # Fallback in case FPS is not retrievable
+    wait_time = 1  # Fallback in case FPS is not retrievable.
 
 while True:
     ret, frame = webcam.read()
@@ -33,12 +33,16 @@ while True:
 
     if bounding_box is not None:
         x1, y1, x2, y2 = bounding_box
-        frame = cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 5)
+        box_area = (x2 - x1) * (y2 - y1)
+        # Avoiding too small objects
+        if box_area > 200:
+            frame = cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 5)
 
     cv2.imshow("webcam", frame)
 
     if cv2.waitKey(wait_time) & 0xFF == ord("q"):
         break
+
 
 webcam.release()
 cv2.destroyAllWindows()
