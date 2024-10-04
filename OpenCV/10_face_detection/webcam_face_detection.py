@@ -28,8 +28,8 @@ with mp.solutions.face_detection.FaceDetection(
         partial_frame = cv2.GaussianBlur(partial_frame, kernel.shape, sigmaX=0)
         # WARNING: If the primary goal is face detection, too much morphological transformation
         #   could reduce the details needed for accurate detection.
-        # partial_frame = cv2.morphologyEx(partial_frame, cv2.MORPH_OPEN, kernel)
         # partial_frame = cv2.morphologyEx(partial_frame, cv2.MORPH_CLOSE, kernel)
+        # partial_frame = cv2.morphologyEx(partial_frame, cv2.MORPH_OPEN, kernel)
         partial_frame = cv2.cvtColor(partial_frame, cv2.COLOR_GRAY2RGB)
 
         out = fd.process(partial_frame)

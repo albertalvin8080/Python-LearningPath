@@ -25,6 +25,7 @@ while True:
     # blured_frame = cv2.blur(frame, blur_kernel.shape)
     hsvFrame = cv2.cvtColor(blured_frame, cv2.COLOR_BGR2HSV)
 
+    # Cretes a binary mask based on the hsv color limits
     mask = cv2.inRange(hsvFrame, lower_limit, upper_limit)
     mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, morph_kernel)
     mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, morph_kernel)
