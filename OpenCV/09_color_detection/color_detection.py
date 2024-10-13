@@ -3,7 +3,7 @@ from PIL import Image
 from albert_utils import color_converter
 
 target_color = (0, 255, 0)  # color in BGR
-lower_limit, upper_limit = color_converter.bgr2hsv(target_color)
+lower_limit, upper_limit = color_converter.bgr2hsv_limits(target_color)
 morph_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
 blur_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (21, 21))
 print(blur_kernel.shape)

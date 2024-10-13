@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-def bgr2hsv(color: list):
+def bgr2hsv_limits(color: list):
     c_arr = np.array([[color]], dtype=np.uint8)
     # An image is just a numpy array after all, even if it only has one pixel.
     hsv_arr = cv2.cvtColor(c_arr, cv2.COLOR_BGR2HSV)
