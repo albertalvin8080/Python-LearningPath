@@ -2,7 +2,7 @@ import os
 import cv2
 import mediapipe as mp
 
-img_path = os.path.join(".", "assets", "face.jpg")
+img_path = os.path.join(".", "assets", "face.jpeg")
 # img_path = os.path.join(".", "assets", "face2.jpg")
 img = cv2.imread(img_path)
 
