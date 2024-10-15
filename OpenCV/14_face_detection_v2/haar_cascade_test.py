@@ -1,11 +1,13 @@
 import cv2 as cv
 import os
 
-img = cv.imread(os.path.join(".", "assets", "faces.jpg"))
-img = cv.imread(r"C:\Users\Albert\Documents\A_Programacao\_GITIGNORE\Learning-Python\OpenCV\assets\face_training\Winston_Churchill\6454f692a232c5bba72257f0_democracia-churchill.jpg")
+path = os.path.join(".", "assets", "faces.jpg")
+path = r"C:\Users\Albert\Documents\A_Programacao\_GITIGNORE\Learning-Python\OpenCV\assets\face_training\Walter_White\ZLD7PMGH6JJ6XPHBG3POWUONMI.avif"
+
+img = cv.imread(path)
 img_gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
-face_cascade = cv.CascadeClassifier(
+haar_cascade = cv.CascadeClassifier(
     os.path.join(".", "assets", "xml", "haarcascade_frontalface_alt.xml")
 )
 
@@ -18,7 +20,7 @@ down by 10% at each iteration (i.e., the detection window is 90% of its size in 
 consider an object detected.
 """
 # haar cascade is really sensitive to noise
-face_rects = face_cascade.detectMultiScale(img_gray, scaleFactor=1.1, minNeighbors=3)
+face_rects = haar_cascade.detectMultiScale(img_gray, scaleFactor=1.1, minNeighbors=3)
 
 for x, y, w, h in face_rects:
     cv.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 4)
