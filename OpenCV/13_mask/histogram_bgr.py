@@ -33,5 +33,6 @@ for i, c in enumerate(colors):
 
 plt.show()
 
+plt.close()
 cv.waitKey()
 cv.destroyAllWindows()

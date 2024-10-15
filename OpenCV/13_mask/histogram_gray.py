@@ -39,5 +39,6 @@ plt.plot(hist_mask)
 plt.xlim([0,256])
 plt.show()
 
+plt.close()
 cv.waitKey()
 cv.destroyAllWindows()
