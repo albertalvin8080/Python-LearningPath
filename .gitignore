@@ -100,5 +100,7 @@ JPA_Hibernate/first-test/mysql-data/
 #*/mvnw.cmd
 
 **/*.egg-info 
-**/goturn.caffemodel
-**/goturn.prototxt
+**/*.caffemodel
+# Not really necessary to exclude *.prototxt
+#**/*.prototxt 
+**/*.pb

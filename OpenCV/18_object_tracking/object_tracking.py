@@ -33,7 +33,7 @@ video_writer = cv.VideoWriter(
 
 ret_cap, frame = capture.read()
 # In a real system, the bounding box would be determined programmatically.
-bbox = (600, 220, 880 - 600, 360 - 220)
+bbox = (x := 600, y := 220, 880 - x, 360 - y)
 drawRect(frame, bbox)
 
 ok = tracker.init(frame, bbox)
