@@ -100,3 +100,5 @@ JPA_Hibernate/first-test/mysql-data/
 #*/mvnw.cmd
 
 **/*.egg-info 
+**/goturn.caffemodel
+**/goturn.prototxt
