@@ -1,0 +1,8 @@
+tensorflow
+numpy
+matplotlib
+ipykernel
+tensorflow-datasets
+# jupyter nbextension enable --py widgetsnbextension --sys-prefix
+jupyter 
+ipywidgets
