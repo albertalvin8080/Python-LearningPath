@@ -104,3 +104,5 @@ JPA_Hibernate/first-test/mysql-data/
 # Not really necessary to exclude *.prototxt
 #**/*.prototxt 
 **/*.pb
+**/*.keras
+**/*.hd5
