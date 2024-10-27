@@ -1,8 +1,9 @@
 tensorflow[and-cuda]
+tensorflow-datasets
 numpy
 matplotlib
 ipykernel
-tensorflow-datasets
-# jupyter nbextension enable --py widgetsnbextension --sys-prefix
+# may be necassary to use, may be not -> jupyter nbextension enable --py widgetsnbextension --sys-prefix
 jupyter 
 ipywidgets
+scikit-learn # sklearn
