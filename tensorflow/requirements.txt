@@ -1,3 +1,7 @@
+# It may be necessary to run these for opencv
+# - sudo apt-get update
+# - sudo apt-get install -y libgl1-mesa-glx
+opencv-contrib-python
 tensorflow[and-cuda]
 tensorflow-datasets
 numpy
