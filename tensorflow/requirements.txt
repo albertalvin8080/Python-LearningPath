@@ -2,14 +2,24 @@
 # - sudo apt-get update
 # - sudo apt-get install -y libgl1-mesa-glx
 opencv-contrib-python
+
 tensorflow[and-cuda]
 tensorflow-datasets
 # [tf] is an extra and stands for tf-keras
 tensorflow-probability[tf]
+
+# You might want to use this:
+# - pip install git+https://github.com/albumentations-team/albumentations.git
+# And if you want to unninstall it:
+# - pip uninstall UNKNOW
+albumentations
+
 numpy
 matplotlib
+scikit-learn # sklearn
+
 ipykernel
-# may be necassary to use, may be not -> jupyter nbextension enable --py widgetsnbextension --sys-prefix
+# It may or may not be necessary to use this command: 
+# - jupyter nbextension enable --py widgetsnbextension --sys-prefix
 jupyter 
 ipywidgets
-scikit-learn # sklearn
