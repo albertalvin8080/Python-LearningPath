@@ -4,6 +4,8 @@
 opencv-contrib-python
 tensorflow[and-cuda]
 tensorflow-datasets
+# [tf] is an extra and stands for tf-keras
+tensorflow-probability[tf]
 numpy
 matplotlib
 ipykernel
