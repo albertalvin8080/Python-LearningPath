@@ -6,6 +6,10 @@ read -t 1 -n 10000
 read -p "Enter a commit message: " commit_message
 # echo
 
+# echo "$commit_message"
+# read -p "Press any key to close..."
+# exit
+
 git add .
 echo
 
