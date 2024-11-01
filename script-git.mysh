@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Flush stdin buffer
+read -t 1 -n 10000 
+
 read -p "Enter a commit message: " commit_message
 # echo
 
