@@ -107,3 +107,11 @@ JPA_Hibernate/first-test/mysql-data/
 **/*.keras
 **/*.hd5
 **/wandb/
+
+**/*.dll
+**/*.so
+**/*.lib
+
+tensorflow/04_lenet_model_malaria/preprocessed_*
+tensorflow/04_lenet_model_malaria/artifacts
+tensorflow/04_lenet_model_malaria/raw_dataset
