@@ -209,7 +209,7 @@ def hyperparam_tuning(hparams, dataset):
     return model, loss, accuracy
 
 
-# Great Search: we specify manually the each parameter.
+# Grid Search: we specify manually the each parameter.
 # Random Search: we specify a range for each parameter.
 HP_NUM_UNITS_1 = hp.HParam("num_units_1", hp.Discrete([16, 32, 64, 128]))
 HP_NUM_UNITS_2 = hp.HParam("num_units_2", hp.Discrete([16, 32, 64, 128]))

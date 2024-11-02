@@ -170,9 +170,10 @@ wandb.init(
         "dense_out": 1,
         "learning_rate": 0.01,
         "batch_size": 32,
-        # "epochs": 8,
-        "epochs": 5,
+        "epochs": 8,
+        # "epochs": 1,
     },
+    sync_tensorboard=True,
 )
 config = wandb.config
 
@@ -358,7 +359,7 @@ def custom_fit(model, train_dataset, val_dataset, cost_fun, optimizer, metric, e
 
 with tf.device("/gpu:0"):
     custom_fit(
-        model, train_dataset, val_dataset, cost_fun, optimizer, metric, config["epochs"]
+        model, train_dataset.take(10), val_dataset.take(10), cost_fun, optimizer, metric, config["epochs"]
     )
 
 wandb.finish()

@@ -1,19 +1,33 @@
 #!/bin/bash
 
+list=("feat" "fix" "build" "chore" "style" "refactor" "perf" "revert" "test" "docs")
+
+echo "Choose the conventional commit:"
+for i in "${!list[@]}"; do
+    echo -en "$i - ${list[$i]}\t"
+    if (((i + 1) % 2 == 0)); then
+        echo
+    fi
+done
+
 # Flush stdin buffer
-read -t 1 -n 10000 
+read -t 1 -n 10000
 
-read -p "Enter a commit message: " commit_message
+read -p ":" conv_op
+choice=${list[$conv_op]}
+
+if [[ ! $conv_op =~ ^[0-9]+$ || -z $choice ]]; then
+    echo "No valid commit type choice. Exiting."
+    exit 1
+fi
+
 # echo
-
-# echo "$commit_message"
-# read -p "Press any key to close..."
-# exit
+read -p "$choice: " commit_message
 
 git add .
 echo
 
-git commit -m "$commit_message"
+git commit -m "$choice: $commit_message"
 echo
 
 git push
