@@ -21,5 +21,9 @@ scikit-learn # sklearn
 ipykernel
 # It may or may not be necessary to use this command: 
 # - jupyter nbextension enable --py widgetsnbextension --sys-prefix
+#
+# Access jupyter:
+# - jupyter notebook --no-browser --ip=0.0.0.0
+# - http://127.0.0.1:8888/?token=<your_token>
 jupyter 
 ipywidgets
