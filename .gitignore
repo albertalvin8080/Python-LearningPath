@@ -116,3 +116,4 @@ tensorflow/04_lenet_model_malaria/preprocessed_*
 tensorflow/04_lenet_model_malaria/artifacts
 tensorflow/04_lenet_model_malaria/raw_dataset
 tensorflow/*/datasets/
+tensorflow/*/tfrecords
