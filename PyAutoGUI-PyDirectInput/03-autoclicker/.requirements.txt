@@ -1,0 +1,4 @@
+#Pillow
+#PyAutoGUI
+PyDirectInput
+#opencv-python
