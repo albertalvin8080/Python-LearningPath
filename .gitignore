@@ -107,6 +107,7 @@ JPA_Hibernate/first-test/mysql-data/
 **/*.keras
 **/*.hd5
 **/wandb/
+**/weights.h5
 
 **/*.dll
 **/*.so
