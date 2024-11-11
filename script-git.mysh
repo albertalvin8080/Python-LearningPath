@@ -26,6 +26,7 @@ fi
 
 # echo
 read -p "$choice: " commit_message
+echo
 
 git add .
 echo
