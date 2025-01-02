@@ -17,7 +17,7 @@ def to_decimal(arr):
 
 
 # x E [-15, +15]
-def aptitude(x):
+def fitness(x):
     x_decimal = x
     if isinstance(x, (np.ndarray, list)):
         x_decimal = to_decimal(x)
@@ -25,7 +25,7 @@ def aptitude(x):
 
 
 # Objective: lower values represent greater aptitude.
-def aptitude_comparator(v1: int, v2: int):
+def fitness_comparator(v1: int, v2: int):
     # 0: for v1 less than v2
     # 1: for v2 less or equals to v1
     return 0 if v1 < v2 else 1
@@ -44,9 +44,9 @@ def tournament(population: np.ndarray):
     winners = []
     for _ in range(POP_SIZE):
         duelers = np.random.choice(POP_SIZE, size=2, replace=False)
-        sinner_idx = aptitude_comparator(
-            aptitude(population[duelers[0]]),
-            aptitude(population[duelers[1]]),
+        sinner_idx = fitness_comparator(
+            fitness(population[duelers[0]]),
+            fitness(population[duelers[1]]),
         )
         winners.append(population[duelers[sinner_idx]])
 
@@ -55,24 +55,26 @@ def tournament(population: np.ndarray):
 
 def crossover(population: np.ndarray):
     new_pop = []
-    for pair in [population[i : i + 2] for i in range(0, len(population), 2)]:
-        children = crossover_step(pair[0], pair[1])
-        new_pop.append(children[0])
-        new_pop.append(children[1])
+    for ind1, ind2 in [population[i : i + 2] for i in range(0, len(population), 2)]:
+        mask = np.random.randint(0, 2, size=X_M_BITS + 1)
+        child1 = []
+        child2 = []
+
+        for idx, mask_bit in enumerate(mask):
+            ind1_bit = ind1[idx]
+            ind2_bit = ind2[idx]
+            child1.append(ind1_bit if mask_bit == 1 else ind2_bit)
+            child2.append(ind2_bit if mask_bit == 0 else ind1_bit)
+
+        new_pop.append(child1)
+        if len(new_pop) >= 3:
+            # 25% chance of crossover not occuring.
+            new_pop.append(ind2)
+        else:
+            new_pop.append(child2)
+
+    print(np.array(new_pop))
     return np.array(new_pop)
-
-
-# ind* -> individual
-def crossover_step(ind1: np.ndarray, ind2: np.ndarray):
-    # +1 for the sign
-    mask = np.random.randint(0, 2, size=X_M_BITS + 1)
-    children = [[], []]
-    for idx, mask_bit in enumerate(mask):
-        ind1_bit = ind1[idx]
-        ind2_bit = ind2[idx]
-        children[0].append(ind1_bit if mask_bit == 1 else ind2_bit)
-        children[1].append(ind2_bit if mask_bit == 0 else ind1_bit)
-    return np.array(children)
 
 
 def mutation(population: np.ndarray):
@@ -102,6 +104,6 @@ if __name__ == "__main__":
     population = fg
     for n in range(2, NUM_GENERATIONS + 1):
         winners = tournament(population)
-        population = crossover(population)
+        population = crossover(winners)
         population = mutation(population)
         print_generation(population, n)
