@@ -66,11 +66,12 @@ def crossover(population: np.ndarray):
             child1.append(ind1_bit if mask_bit == 1 else ind2_bit)
             child2.append(ind2_bit if mask_bit == 0 else ind1_bit)
 
-        new_pop.append(child1)
-        if len(new_pop) >= 3:
-            # 25% chance of crossover not occuring.
+        if np.random.rand() < 0.25:
+            # Skip crossover, add original parents
+            new_pop.append(ind1)
             new_pop.append(ind2)
         else:
+            new_pop.append(child1)
             new_pop.append(child2)
 
     print(np.array(new_pop))
